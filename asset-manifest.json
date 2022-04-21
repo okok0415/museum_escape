@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/museum_escape/static/js/main.c01890df.js",
+    "static/media/thirteen.png": "/museum_escape/static/media/thirteen.d29991389f00ee3bf0b1.png",
+    "static/media/eleven.png": "/museum_escape/static/media/eleven.2cecb5d5458d3639c3dd.png",
+    "static/media/seven.png": "/museum_escape/static/media/seven.1304b98a4f39d6fe58a4.png",
+    "static/media/nine.png": "/museum_escape/static/media/nine.f2f7a644e2e0add11982.png",
+    "static/media/twelve.png": "/museum_escape/static/media/twelve.93e2582ab9f24e94a78e.png",
+    "static/media/ten.png": "/museum_escape/static/media/ten.cc53e4a18f54b064e867.png",
+    "static/media/five.png": "/museum_escape/static/media/five.a6275e1b6fa63a131ffc.png",
+    "static/media/six.png": "/museum_escape/static/media/six.5284e11747c457d34bfd.png",
+    "static/media/three.png": "/museum_escape/static/media/three.6f13730d71e4f75a0a68.png",
+    "static/media/eight.png": "/museum_escape/static/media/eight.8566e57490ba25458ec5.png",
+    "static/media/four.png": "/museum_escape/static/media/four.7792a7639b23ec648e74.png",
+    "static/media/fourteen.png": "/museum_escape/static/media/fourteen.638bc457f0d1db8f2663.png",
+    "static/media/two.png": "/museum_escape/static/media/two.9e520282283f17cd0619.png",
+    "static/media/one.png": "/museum_escape/static/media/one.3278cf2dc5b570333c0f.png",
+    "static/media/answer.png": "/museum_escape/static/media/answer.893b9b0f6ea89f977e55.png",
+    "static/media/input.png": "/museum_escape/static/media/input.46f8ce20160e40e7ea6f.png",
+    "index.html": "/museum_escape/index.html",
+    "main.c01890df.js.map": "/museum_escape/static/js/main.c01890df.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c01890df.js"
+  ]
+}
