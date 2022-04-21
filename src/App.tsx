@@ -42,6 +42,9 @@ body {
 	font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
   font-weight: 300;
   line-height: 1.2;
+  display: flex;
+  justify-content: center;
+
 }
 a {
   text-decoration: none;
@@ -74,6 +77,7 @@ input{
 }
 :root{
   --vh : 100%;
+
 }
 `
 
