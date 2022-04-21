@@ -3,10 +3,9 @@ import { Switch } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import Home from "./Home/Home";
 
-
 function Router() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={'/museum_escape'}>
             <Switch>
                 <Route path="/" exact={true}><Home /></Route>
             </Switch>

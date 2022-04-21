@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import One from "./Images/one.png";
 import Two from "./Images/two.png"
@@ -16,6 +16,7 @@ import Thirteen from "./Images/thirteen.png"
 import Fourteen from "./Images/fourteen.png"
 import answer from "./Images/answer.png"
 import input from "./Images/input.png"
+import number from "./Images/number.png"
 import { Link } from "react-router-dom";
 
 
@@ -67,7 +68,7 @@ const Input = styled.div`
 `
 
 const RealInput = styled.input`
-    background : url('/static/media/input.46f8ce20160e40e7ea6f.png') no-repeat;
+    background : url(${input}) no-repeat;
     width: 266px;
     height: 57px;
     position: absolute;
@@ -80,9 +81,38 @@ const RealInput = styled.input`
     font-weight: 700;
     color: rgb(138, 108, 79);
     text-align: center;
+    z-index: 2000;
     animation : ${startAnimation} 0.6s;
 `
 
+const NumInput = styled.div`
+    width: 266px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    animation : ${startAnimation} 0.6s;
+    display: grid;
+    z-index: 2000;
+    grid-template-columns: 1fr 1fr 1fr;
+`
+const NumInput1 = styled.input`
+    background: url(${number}) no-repeat;
+    background-position: cover;
+    width:72px;
+    height: 72px;
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(138, 108, 79);
+    text-align: center;
+    animation : ${startAnimation} 0.6s;
+`
 const OneImg = styled(Img).attrs({ src: One })``;
 const TwoImg = styled(Img).attrs({ src: Two })``;
 const ThreeImg = styled(Img).attrs({ src: Three })``;
@@ -107,6 +137,12 @@ function Main() {
     const [market, setMarket] = useState<string>('');
     const [oldbook, setOldbook] = useState<string>('')
     const [kyung, setKyung] = useState<string>();
+    const [numone, setNumone] = useState<string>();
+    const [numtwo, setNumtwo] = useState<string>();
+    const [numthree, setNumthree] = useState<string>();
+    const oneRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const twoRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const threeRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
     const checkPlus = () => {
         setCheck(check + 1)
@@ -125,6 +161,17 @@ function Main() {
     }
     const onChangeKyung = (e: React.FormEvent<HTMLInputElement>) => {
         setKyung(e.currentTarget.value);
+    }
+    const onChangeNumOne = (e: React.FormEvent<HTMLInputElement>) => {
+        setNumone(e.currentTarget.value);
+        twoRef.current.focus()
+    }
+    const onChangeNumTwo = (e: React.FormEvent<HTMLInputElement>) => {
+        setNumtwo(e.currentTarget.value);
+        threeRef.current.focus()
+    }
+    const onChangeNumThree = (e: React.FormEvent<HTMLInputElement>) => {
+        setNumthree(e.currentTarget.value);
     }
     const goMuseum = () => {
         window.location.href = 'https://www.museum.go.kr/'
@@ -155,6 +202,18 @@ function Main() {
             hideInput()
         };
     }, [kyung]);
+
+    useEffect(() => {
+        if (numone === '3' && numtwo === '0' && numthree === '6') {
+            alert('정답입니다!')
+            checkPlus()
+            setNumone('')
+            setNumtwo('')
+            setNumthree('')
+            hideInput()
+        };
+    }, [numone, numtwo, numthree]);
+
 
     if (check === 1) {
         return (
@@ -189,7 +248,7 @@ function Main() {
     else if (check === 5) {
         return (
             <Wrapper>
-                {inp && <Input onClick={hideInput}><RealInput autoFocus value={market} onChange={onChangeMarket} /></Input>}
+                {inp && (<><Input onClick={hideInput} /><RealInput autoFocus value={market} onChange={onChangeMarket} /></>)}
                 <FiveImg />
                 <Button onClick={seeInput} />
             </Wrapper>
@@ -206,7 +265,7 @@ function Main() {
     else if (check === 7) {
         return (
             <Wrapper>
-                {inp && <Input onClick={hideInput}><RealInput autoFocus value={oldbook} onChange={onChangeOldbook} /></Input>}
+                {inp && (<><Input onClick={hideInput} /><RealInput autoFocus value={oldbook} onChange={onChangeOldbook} /></>)}
                 <SevenImg />
                 <Button onClick={seeInput} />
             </Wrapper>
@@ -223,7 +282,7 @@ function Main() {
     else if (check === 9) {
         return (
             <Wrapper>
-                {inp && <Input onClick={hideInput}><RealInput autoFocus value={kyung} onChange={onChangeKyung} /></Input>}
+                {inp && (<><Input onClick={hideInput} /><RealInput autoFocus value={kyung} onChange={onChangeKyung} /></>)}
                 <NineImg />
                 <Button onClick={seeInput} />
             </Wrapper>
@@ -239,7 +298,7 @@ function Main() {
     else if (check === 11) {
         return (
             <Wrapper>
-                {inp && <Input onClick={hideInput}><RealInput autoFocus value={kyung} onChange={onChangeKyung} /></Input>}
+                {inp && (<><Input onClick={hideInput} /><NumInput><NumInput1 ref={oneRef} autoFocus value={numone} onChange={onChangeNumOne} /><NumInput1 ref={twoRef} value={numtwo} onChange={onChangeNumTwo} /><NumInput1 ref={threeRef} value={numthree} onChange={onChangeNumThree} /></NumInput></>)}
                 <ElevenImg />
                 <Button onClick={seeInput} />
             </Wrapper>
@@ -265,7 +324,7 @@ function Main() {
         return (
             <Wrapper>
                 <FourteenImg />
-                <Button onClick={checkPlus} />
+                <Button onClick={goMuseum} />
             </Wrapper>
         )
     }
