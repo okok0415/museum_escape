@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/museum_escape/static/js/main.c01890df.js",
+    "main.js": "/museum_escape/static/js/main.24090fe8.js",
     "static/media/thirteen.png": "/museum_escape/static/media/thirteen.d29991389f00ee3bf0b1.png",
     "static/media/eleven.png": "/museum_escape/static/media/eleven.2cecb5d5458d3639c3dd.png",
     "static/media/seven.png": "/museum_escape/static/media/seven.1304b98a4f39d6fe58a4.png",
@@ -18,9 +18,9 @@
     "static/media/answer.png": "/museum_escape/static/media/answer.893b9b0f6ea89f977e55.png",
     "static/media/input.png": "/museum_escape/static/media/input.46f8ce20160e40e7ea6f.png",
     "index.html": "/museum_escape/index.html",
-    "main.c01890df.js.map": "/museum_escape/static/js/main.c01890df.js.map"
+    "main.24090fe8.js.map": "/museum_escape/static/js/main.24090fe8.js.map"
   },
   "entrypoints": [
-    "static/js/main.c01890df.js"
+    "static/js/main.24090fe8.js"
   ]
 }
