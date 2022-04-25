@@ -143,6 +143,8 @@ function Main() {
     const oneRef = useRef() as React.MutableRefObject<HTMLInputElement>;
     const twoRef = useRef() as React.MutableRefObject<HTMLInputElement>;
     const threeRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const i = 0;
+
 
     const checkPlus = () => {
         setCheck(check + 1)
